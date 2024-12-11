@@ -12,6 +12,11 @@ import Icon from "react-native-vector-icons/FontAwesome";
 import { Ionicons } from "@expo/vector-icons";
 import BgImage from "../assets/Iceberg.png";
 import ReusableButton from "../components/ReusableButton";
+import Top from "../assets/Top.png";
+import Thoughts from "../assets/Thoughts.png";
+import Body from "../assets/Body.png";
+import Feelings from "../assets/feelings.png"
+import Need from "../assets/Need.png";
 
 const { width } = Dimensions.get("window");
 
@@ -23,46 +28,122 @@ const Iceberg = ({ navigation }) => {
       key: "Iceberg",
       content: (
         <View style={styles.screenContainer}>
-          <Image source={BgImage} style={styles.icebergImage} />
+          <View style={{ display: "flex", flexDirection: "column" }}>
+            <TouchableOpacity>
+            <Image source={Top} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Thoughts")}>
+            <Image source={Thoughts} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Body")}>
+            <Image source={Body} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Image source={Feelings} onPress={() => navigation.navigate("Feelings")}/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Image source={Need} />
+            </TouchableOpacity>
+          </View>
           <View style={{ width: "90%", marginTop: 40 }}>
-            <ReusableButton text={"Submitted Answers"} onPress={()=>navigation.navigate("SubmittedAnswers")}/>
+            <ReusableButton
+              text={"Submitted Answers"}
+              onPress={() => navigation.navigate("SubmittedAnswers")}
+            />
           </View>
         </View>
       ),
     },
     {
-        key: "knowledge",
-        content: (
-          <View style={styles.screenContainer}>
-            <Image source={BgImage} style={styles.icebergImage} />
-            <View style={{ width: "90%", marginTop: 40 }}>
-              <ReusableButton text={"Knowledge"} onPress={()=>navigation.navigate("Knowledge")}/>
-            </View>
+      key: "knowledge",
+      content: (
+        <View style={styles.screenContainer}>
+          <View style={{ display: "flex", flexDirection: "column" }}>
+            <TouchableOpacity>
+            <Image source={Top} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Thoughts")}>
+            <Image source={Thoughts} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Body")}>
+            <Image source={Body} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Image source={Feelings} onPress={() => navigation.navigate("Feelings")}/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Image source={Need} onPress={() => navigation.navigate("Need")}/>
+            </TouchableOpacity>
           </View>
-        ),
-      },
-      {
-        key: "SOS",
-        content: (
-          <View style={styles.screenContainer}>
-            <Image source={BgImage} style={styles.icebergImage} />
-            <View style={{ width: "90%", marginTop: 40 }}>
-              <ReusableButton text={"SOS"} onPress={()=>navigation.navigate("SOS")}/>
-            </View>
+          <View style={{ width: "90%", marginTop: 40 }}>
+            <ReusableButton
+              text={"Knowledge"}
+              onPress={() => navigation.navigate("Knowledge")}
+            />
           </View>
-        ),
-      },
-      {
-        key: "Thoughts",
-        content: (
-          <View style={styles.screenContainer}>
-            <Image source={BgImage} style={styles.icebergImage} />
-            <View style={{ width: "90%", marginTop: 40 }}>
-              <ReusableButton text={"Thoughts"} onPress={()=>navigation.navigate("Thoughts")}/>
-            </View>
+        </View>
+      ),
+    },
+    {
+      key: "SOS",
+      content: (
+        <View style={styles.screenContainer}>
+ <View style={{ display: "flex", flexDirection: "column" }}>
+            <TouchableOpacity>
+            <Image source={Top} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Thoughts")}>
+            <Image source={Thoughts} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Body")}>
+            <Image source={Body} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Image source={Feelings} onPress={() => navigation.navigate("Feelings")}/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Image source={Need} />
+            </TouchableOpacity>
           </View>
-        ),
-      },
+          <View style={{ width: "90%", marginTop: 40 }}>
+            <ReusableButton
+              text={"SOS"}
+              onPress={() => navigation.navigate("SOS")}
+            />
+          </View>
+        </View>
+      ),
+    },
+    {
+      key: "Thoughts",
+      content: (
+        <View style={styles.screenContainer}>
+           <View style={{ display: "flex", flexDirection: "column" }}>
+            <TouchableOpacity>
+            <Image source={Top} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Thoughts")}>
+            <Image source={Thoughts} />
+            </TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.navigate("Body")}>
+            <Image source={Body} />
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Image source={Feelings} onPress={() => navigation.navigate("Feelings")}/>
+            </TouchableOpacity>
+            <TouchableOpacity>
+            <Image source={Need} />
+            </TouchableOpacity>
+          </View>
+          <View style={{ width: "90%", marginTop: 40 }}>
+            <ReusableButton
+              text={"Thoughts"}
+              onPress={() => navigation.navigate("Thoughts")}
+            />
+          </View>
+        </View>
+      ),
+    },
   ];
 
   const navigate = (direction) => {
