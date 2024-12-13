@@ -199,7 +199,7 @@ const styles = StyleSheet.create({
   },
   itemText: {
     flex: 1,
-    color: "#FFF",
+    color: "#FFFFFF1A",
     fontSize: 16,
   },
   expandedContainer: {
