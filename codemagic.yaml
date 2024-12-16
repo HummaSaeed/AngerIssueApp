@@ -3,7 +3,6 @@ workflows:
     name: Build Expo iOS App
     environment:
       node: latest
-      expo-cli: latest
       xcode: latest
     scripts:
       - name: Install Node.js dependencies
