@@ -1,0 +1,20 @@
+workflows:
+  expo-ios-build:
+    name: Build Expo iOS App
+    environment:
+      node: latest
+      expo-cli: latest
+      xcode: latest
+    scripts:
+      - name: Install Node.js dependencies
+        script: npm install
+      - name: Build Expo iOS App
+        script: |
+          npx expo prebuild --platform ios
+          eas build --platform ios --profile production --non-interactive
+    artifacts:
+      - build/*.ipa
+    publishing:
+      email:
+        recipients:
+          - hummasaeed786@gmail.com
