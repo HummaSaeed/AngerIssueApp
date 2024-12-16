@@ -1,8 +1,10 @@
 {
   "build": {
-    "ios": {
-      "distribution": "simulator",
-      "releaseChannel": "default"
-    }
+    "preview": {
+      "ios": {
+        "simulator": true
+      }
+    },
+    "production": {}
   }
 }
